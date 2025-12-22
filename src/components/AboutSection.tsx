@@ -68,7 +68,7 @@ export const AboutSection = () => {
               <div className="space-y-4">
                 <div className="w-full h-full relative flex items-center justify-center">
                   <div
-                    className="absolute inset-0 bg-[url('/images/7+tahun.jpg')] bg-cover bg-center opacity-10"
+                    className="absolute inset-0 bg-[url(src/assets/7+tahun.jpg')] bg-cover bg-center opacity-10"
                     aria-hidden="true"
                   />
                   <div
