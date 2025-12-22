@@ -70,33 +70,26 @@ export const AboutSection = () => {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg relative">
+                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-elegant-lg relative">
                   <div
-                    className="absolute inset-0 bg-cover bg-center opacity-15"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{ backgroundImage: `url(${bg7Tahun})` }}
-                    aria-hidden="true"
                   />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
-                    aria-hidden="true"
-                  />
+                  <div className="absolute inset-0 bg-black/20" />
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
                     <span className="text-4xl">🏠</span>
                   </div>
                 </div>
 
-                <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg relative">
+                <div className="aspect-square rounded-2xl overflow-hidden shadow-elegant relative p-6 flex flex-col justify-center">
                   <div
-                    className="absolute inset-0 bg-cover bg-center opacity-15"
+                    className="absolute inset-0 bg-cover bg-center" 
                     style={{ backgroundImage: `url(${bg7Tahun})` }}
-                    aria-hidden="true"
                   />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
-                    aria-hidden="true"
-                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/35 to-black/10" />
+                  <div className="relative z-10">
                   <span className="text-4xl font-heading font-bold text-primary">7+</span>
-                  <span className="text-sm text-muted-foreground mt-1">Tahun Pengalaman</span>
+                  <span className="text-sm text-white/80 mt-1 block">Tahun Pengalaman</span>
                 </div>
               </div>
 
