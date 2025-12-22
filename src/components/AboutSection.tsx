@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+
+// contoh background (ganti sesuai file kamu)
+import bgRumah from "@/assets/rumah.jpg";
 import bg7Tahun from "@/assets/7+tahun.jpg";
 import bgProyek from "@/assets/proyek-selesai.jpg";
 import bgKayu from "@/assets/kayu.jpg";
-import bgRumah from "@/assets/rumah.jpg"; // pastikan file ada
 
 const features = [
   "Filosofi craftsmanship tradisional dengan teknologi modern",
@@ -11,6 +13,33 @@ const features = [
   "Desain custom & fleksibel sesuai kebutuhan",
   "Layanan end-to-end (desain → produksi → instalasi)",
 ];
+
+type BgCardProps = {
+  bg: string;
+  className?: string;
+  children: React.ReactNode;
+  overlayClassName?: string;
+};
+
+function BgCard({ bg, className = "", children, overlayClassName }: BgCardProps) {
+  return (
+    <div className={`relative overflow-hidden rounded-2xl ${className}`}>
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bg})` }}
+        aria-hidden="true"
+      />
+      <div
+        className={
+          overlayClassName ??
+          "absolute inset-0 bg-gradient-to-br from-black/35 via-black/15 to-black/5"
+        }
+        aria-hidden="true"
+      />
+      <div className="relative z-10 h-full w-full">{children}</div>
+    </div>
+  );
+}
 
 export const AboutSection = () => {
   return (
@@ -27,9 +56,11 @@ export const AboutSection = () => {
             <span className="text-primary font-medium text-sm uppercase tracking-wider mb-4 block">
               Tentang Kami
             </span>
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6 leading-tight">
               PT. IDEA BORNEO NUSANTARA
             </h2>
+
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               IDEABORNEO adalah perusahaan Indonesia yang berdiri sejak 2017,
               mengkhususkan diri dalam rumah kayu prefabrikasi, furnitur kayu,
@@ -37,6 +68,7 @@ export const AboutSection = () => {
               tradisional dengan teknologi modern, dengan fokus pada keberlanjutan,
               presisi, dan material berkualitas tinggi.
             </p>
+
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Perusahaan kami telah menangani proyek berskala nasional dan memiliki
               rumah kayu yang telah diresmikan dua kali oleh Presiden RI ke-7
@@ -69,41 +101,59 @@ export const AboutSection = () => {
             className="relative"
           >
             <div className="grid grid-cols-2 gap-4">
+              {/* kolom kiri */}
               <div className="space-y-4">
-                <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-elegant-lg relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${bg7Tahun})` }}
-                  />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <div className="relative z-10 w-full h-full flex items-center justify-center">
-                    <span className="text-4xl">🏠</span>
+                {/* card kiri atas */}
+                <BgCard
+                  bg={bgRumah}
+                  className="aspect-[4/5] shadow-elegant-lg"
+                >
+                  <div className="h-full w-full flex items-center justify-center">
+                    <span className="text-3xl md:text-4xl font-heading font-bold text-white">
+                      test1
+                    </span>
                   </div>
-                </div>
+                </BgCard>
 
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-elegant relative p-6 flex flex-col justify-center">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center" 
-                    style={{ backgroundImage: `url(${bg7Tahun})` }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/35 to-black/10" />
-                  <div className="relative z-10">
-                  <span className="text-4xl font-heading font-bold text-primary">7+</span>
-                  <span className="text-sm text-white/80 mt-1 block">Tahun Pengalaman</span>
-                </div>
+                {/* card 7+ */}
+                <BgCard
+                  bg={bg7Tahun}
+                  className="aspect-square shadow-elegant p-6 flex flex-col justify-center"
+                >
+                  <span className="text-4xl font-heading font-bold text-white">
+                    7+
+                  </span>
+                  <span className="text-sm text-white/80 mt-1">
+                    Tahun Pengalaman
+                  </span>
+                </BgCard>
               </div>
 
+              {/* kolom kanan */}
               <div className="space-y-4 pt-8">
-                <div className="aspect-square bg-primary/10 rounded-2xl p-6 shadow-elegant flex flex-col justify-center">
-                  <span className="text-4xl font-heading font-bold text-primary">50+</span>
-                  <span className="text-sm text-muted-foreground mt-1">Proyek Selesai</span>
-                </div>
+                {/* card 50+ */}
+                <BgCard
+                  bg={bgProyek}
+                  className="aspect-square shadow-elegant p-6 flex flex-col justify-center"
+                >
+                  <span className="text-4xl font-heading font-bold text-white">
+                    50+
+                  </span>
+                  <span className="text-sm text-white/80 mt-1">
+                    Proyek Selesai
+                  </span>
+                </BgCard>
 
-                <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg">
-                  <div className="w-full h-full bg-gradient-to-br from-wood-medium to-wood-dark flex items-center justify-center">
+                {/* card kanan bawah */}
+                <BgCard
+                  bg={bgKayu}
+                  className="aspect-[4/5] shadow-elegant-lg"
+                  overlayClassName="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10"
+                >
+                  <div className="h-full w-full flex items-center justify-center">
                     <span className="text-4xl">🪵</span>
                   </div>
-                </div>
+                </BgCard>
               </div>
             </div>
 
