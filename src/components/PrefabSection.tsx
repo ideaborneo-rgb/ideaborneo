@@ -44,7 +44,7 @@ export const PrefabSection = () => {
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${prefabBg})`, opacity: 0.08 }}
+                style={{ backgroundImage: `url(${prefabBg})`, opacity: 0.25 }}
               />
 
               {/* Optional overlay biar teks kebaca */}
