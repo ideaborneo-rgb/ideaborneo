@@ -82,7 +82,7 @@ export const AboutSection = () => {
                   />
                   {/* konten */}
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
-                    <span className="text-4xl">🏠</span>
+                    <span className="text-4xl">test</span>
                   </div>
                 </div>
 
