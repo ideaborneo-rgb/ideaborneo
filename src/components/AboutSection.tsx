@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
-import bg7Tahun from "@/assets/7+tahun.jpg"; // pastikan file ada
+import bg7Tahun from "@/assets/7+tahun.jpg";
+import bgProyek from "@/assets/proyek-selesai.jpg";
+import bgKayu from "@/assets/kayu.jpg";
+import bgRumah from "@/assets/rumah.jpg"; // pastikan file ada
 
 const features = [
   "Filosofi craftsmanship tradisional dengan teknologi modern",
@@ -67,26 +70,31 @@ export const AboutSection = () => {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                {/* ✅ KOTAK KIRI ATAS (🏠) */}
                 <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg relative">
-                  {/* layer gambar */}
                   <div
-                    className="absolute inset-0 bg-cover bg-center opacity-10"
+                    className="absolute inset-0 bg-cover bg-center opacity-15"
                     style={{ backgroundImage: `url(${bg7Tahun})` }}
                     aria-hidden="true"
                   />
-                  {/* layer overlay biar teks/icon kebaca */}
                   <div
                     className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
                     aria-hidden="true"
                   />
-                  {/* konten */}
                   <div className="relative z-10 w-full h-full flex items-center justify-center">
-                    <span className="text-4xl">test1</span>
+                    <span className="text-4xl">🏠</span>
                   </div>
                 </div>
 
-                <div className="aspect-square bg-secondary rounded-2xl p-6 shadow-elegant flex flex-col justify-center">
+                <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg relative">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center opacity-15"
+                    style={{ backgroundImage: `url(${bg7Tahun})` }}
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
+                    aria-hidden="true"
+                  />
                   <span className="text-4xl font-heading font-bold text-primary">7+</span>
                   <span className="text-sm text-muted-foreground mt-1">Tahun Pengalaman</span>
                 </div>
