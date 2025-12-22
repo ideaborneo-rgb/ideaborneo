@@ -38,33 +38,48 @@ export const PrefabSection = () => {
             viewport={{ once: true }}
             className="relative order-2 lg:order-1"
           >
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute insert-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${prefabBg})`, opacity: 0.08 }}
-            />
+            {/* Card wrapper (penting biar aspect/rounded/shadow jalan) */}
+            <div className="relative aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg">
+              {/* Background image layer */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${prefabBg})`, opacity: 0.08 }}
+              />
+
+              {/* Optional overlay biar teks kebaca */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-dark/40"
+              />
+
+              {/* Center content */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Factory className="w-10 h-10 text-black" />
                   </div>
-                  <span className="text-lg font-heading font-semibold text-white drop-shadow-md">Prefab System</span>
+                  <span className="text-lg font-heading font-semibold text-white drop-shadow-md">
+                    Prefab System
+                  </span>
                 </div>
               </div>
+
               {/* Decorative grid pattern */}
-              <div className="absolute inset-0 opacity-10">
+              <div aria-hidden="true" className="absolute inset-0 opacity-10">
                 <div className="grid grid-cols-6 h-full">
-                  {[...Array(6)].map((_, i) => (
+                  {Array.from({ length: 6 }).map((_, i) => (
                     <div key={i} className="border-l border-foreground/20" />
                   ))}
                 </div>
                 <div className="absolute inset-0 grid grid-rows-4">
-                  {[...Array(4)].map((_, i) => (
+                  {Array.from({ length: 4 }).map((_, i) => (
                     <div key={i} className="border-t border-foreground/20" />
                   ))}
                 </div>
               </div>
             </div>
+
             {/* Floating stats */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -95,9 +110,9 @@ export const PrefabSection = () => {
               Konstruksi Modern, Hasil Maksimal
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Sistem prefabrikasi IDEABORNEO memungkinkan pembangunan yang lebih 
-              cepat, efisien, dan berkualitas tinggi. Semua komponen diproduksi 
-              di workshop kami dengan standar ketat sebelum dikirim ke lokasi proyek.
+              Sistem prefabrikasi IDEABORNEO memungkinkan pembangunan yang lebih cepat, efisien, dan
+              berkualitas tinggi. Semua komponen diproduksi di workshop kami dengan standar ketat
+              sebelum dikirim ke lokasi proyek.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
