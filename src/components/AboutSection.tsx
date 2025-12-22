@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import bg7Tahun from "@/assets/7+tahun.jpg"; // pastikan file ada
 
 const features = [
   "Filosofi craftsmanship tradisional dengan teknologi modern",
@@ -27,15 +28,15 @@ export const AboutSection = () => {
               PT. IDEA BORNEO NUSANTARA
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              IDEABORNEO adalah perusahaan Indonesia yang berdiri sejak 2017, 
-              mengkhususkan diri dalam rumah kayu prefabrikasi, furnitur kayu, 
-              dan desain interior & arsitektur. Kami menggabungkan keahlian 
-              tradisional dengan teknologi modern, dengan fokus pada keberlanjutan, 
+              IDEABORNEO adalah perusahaan Indonesia yang berdiri sejak 2017,
+              mengkhususkan diri dalam rumah kayu prefabrikasi, furnitur kayu,
+              dan desain interior & arsitektur. Kami menggabungkan keahlian
+              tradisional dengan teknologi modern, dengan fokus pada keberlanjutan,
               presisi, dan material berkualitas tinggi.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Perusahaan kami telah menangani proyek berskala nasional dan memiliki 
-              rumah kayu yang telah diresmikan dua kali oleh Presiden RI ke-7 
+              Perusahaan kami telah menangani proyek berskala nasional dan memiliki
+              rumah kayu yang telah diresmikan dua kali oleh Presiden RI ke-7
               di Ibu Kota Nusantara (IKN).
             </p>
 
@@ -66,28 +67,37 @@ export const AboutSection = () => {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="w-full h-full relative flex items-center justify-center">
+                {/* ✅ KOTAK KIRI ATAS (🏠) */}
+                <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg relative">
+                  {/* layer gambar */}
                   <div
-                    className="absolute inset-0 bg-[url(src/assets/7+tahun.jpg')] bg-cover bg-center opacity-10"
+                    className="absolute inset-0 bg-cover bg-center opacity-10"
+                    style={{ backgroundImage: `url(${bg7Tahun})` }}
                     aria-hidden="true"
                   />
+                  {/* layer overlay biar teks/icon kebaca */}
                   <div
                     className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
                     aria-hidden="true"
                   />
-                   <span className="text-4xl">🏠</span>
-                 </div>
+                  {/* konten */}
+                  <div className="relative z-10 w-full h-full flex items-center justify-center">
+                    <span className="text-4xl">🏠</span>
+                  </div>
                 </div>
+
                 <div className="aspect-square bg-secondary rounded-2xl p-6 shadow-elegant flex flex-col justify-center">
                   <span className="text-4xl font-heading font-bold text-primary">7+</span>
                   <span className="text-sm text-muted-foreground mt-1">Tahun Pengalaman</span>
                 </div>
               </div>
+
               <div className="space-y-4 pt-8">
                 <div className="aspect-square bg-primary/10 rounded-2xl p-6 shadow-elegant flex flex-col justify-center">
                   <span className="text-4xl font-heading font-bold text-primary">50+</span>
                   <span className="text-sm text-muted-foreground mt-1">Proyek Selesai</span>
                 </div>
+
                 <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg">
                   <div className="w-full h-full bg-gradient-to-br from-wood-medium to-wood-dark flex items-center justify-center">
                     <span className="text-4xl">🪵</span>
@@ -95,6 +105,7 @@ export const AboutSection = () => {
                 </div>
               </div>
             </div>
+
             {/* Decorative Element */}
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
