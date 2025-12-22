@@ -43,8 +43,7 @@ export const PrefabSection = () => {
               className="pointer-events-none absolute insert-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${prefabBg})`, opacity: 0.08 }}
             />
-              <div className="absolute inset-0 bg-black/35" />
-              <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-20 h-20 bg-primary/90 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Factory className="w-10 h-10 text-black" />
