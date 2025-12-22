@@ -71,16 +71,7 @@ export const AboutSection = () => {
                     <span className="text-4xl">🏠</span>
                   </div>
                 </div>
-                <div className="w-full h-full relative flex items-center justify-center">
-                  <div
-                    className="absolute inset-0 bg-[url('/images/about-1.jpg')] bg-cover bg-center opacity-10"
-                    aria-hidden="true"
-                  />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
-                    aria-hidden="true"
-                  />
-                  <span className="relative z-10 text-4xl">🏠</span>
+                <div className="aspect-square bg-secondary rounded-2xl p-6 shadow-elegant flex flex-col justify-center">
                   <span className="text-4xl font-heading font-bold text-primary">7+</span>
                   <span className="text-sm text-muted-foreground mt-1">Tahun Pengalaman</span>
                 </div>
