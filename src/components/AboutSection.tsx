@@ -66,10 +66,17 @@ export const AboutSection = () => {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="aspect-[4/5] bg-wood-light rounded-2xl overflow-hidden shadow-elegant-lg">
-                  <div className="w-full h-full bg-gradient-to-br from-wood-light to-wood-medium flex items-center justify-center">
-                    <span className="text-4xl">🏠</span>
-                  </div>
+                <div className="w-full h-full relative flex items-center justify-center">
+                  <div
+                    className="absolute inset-0 bg-[url('/images/7+tahun.jpg')] bg-cover bg-center opacity-10"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br from-wood-light/80 to-wood-medium/80"
+                    aria-hidden="true"
+                  />
+                   <span className="text-4xl">🏠</span>
+                 </div>
                 </div>
                 <div className="aspect-square bg-secondary rounded-2xl p-6 shadow-elegant flex flex-col justify-center">
                   <span className="text-4xl font-heading font-bold text-primary">7+</span>
