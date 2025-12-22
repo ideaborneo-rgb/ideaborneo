@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
-// contoh background (ganti sesuai file kamu)
+// ganti sesuai file kamu
 import bgRumah from "@/assets/rumah.jpg";
 import bg7Tahun from "@/assets/7+tahun.jpg";
 import bgProyek from "@/assets/proyek-selesai.jpg";
@@ -19,23 +19,33 @@ type BgCardProps = {
   className?: string;
   children: React.ReactNode;
   overlayClassName?: string;
+  imgOpacity?: number; // 0 - 1
 };
 
-function BgCard({ bg, className = "", children, overlayClassName }: BgCardProps) {
+function BgCard({
+  bg,
+  className = "",
+  children,
+  overlayClassName,
+  imgOpacity = 0.35, // default opacity background image
+}: BgCardProps) {
   return (
     <div className={`relative overflow-hidden rounded-2xl ${className}`}>
+      {/* background image (opacity di sini) */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${bg})` }}
+        style={{ backgroundImage: `url(${bg})`, opacity: imgOpacity }}
         aria-hidden="true"
       />
+      {/* overlay biar teks kebaca */}
       <div
         className={
           overlayClassName ??
-          "absolute inset-0 bg-gradient-to-br from-black/35 via-black/15 to-black/5"
+          "absolute inset-0 bg-gradient-to-br from-black/45 via-black/20 to-black/10"
         }
         aria-hidden="true"
       />
+      {/* content */}
       <div className="relative z-10 h-full w-full">{children}</div>
     </div>
   );
@@ -71,8 +81,8 @@ export const AboutSection = () => {
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Perusahaan kami telah menangani proyek berskala nasional dan memiliki
-              rumah kayu yang telah diresmikan dua kali oleh Presiden RI ke-7
-              di Ibu Kota Nusantara (IKN).
+              rumah kayu yang telah diresmikan dua kali oleh Presiden RI ke-7 di
+              Ibu Kota Nusantara (IKN).
             </p>
 
             <div className="space-y-4">
@@ -106,19 +116,20 @@ export const AboutSection = () => {
                 {/* card kiri atas */}
                 <BgCard
                   bg={bgRumah}
+                  imgOpacity={0.25}
                   className="aspect-[4/5] shadow-elegant-lg"
                 >
                   <div className="h-full w-full flex items-center justify-center">
-                    <span className="text-3xl md:text-4xl font-heading font-bold text-white">
-                      test1
-                    </span>
+                    <span className="text-4xl">🏠</span>
                   </div>
                 </BgCard>
 
                 {/* card 7+ */}
                 <BgCard
                   bg={bg7Tahun}
+                  imgOpacity={0.35}
                   className="aspect-square shadow-elegant p-6 flex flex-col justify-center"
+                  overlayClassName="absolute inset-0 bg-gradient-to-br from-black/55 via-black/25 to-black/10"
                 >
                   <span className="text-4xl font-heading font-bold text-white">
                     7+
@@ -134,7 +145,9 @@ export const AboutSection = () => {
                 {/* card 50+ */}
                 <BgCard
                   bg={bgProyek}
+                  imgOpacity={0.3}
                   className="aspect-square shadow-elegant p-6 flex flex-col justify-center"
+                  overlayClassName="absolute inset-0 bg-gradient-to-br from-black/50 via-black/20 to-black/10"
                 >
                   <span className="text-4xl font-heading font-bold text-white">
                     50+
@@ -147,8 +160,9 @@ export const AboutSection = () => {
                 {/* card kanan bawah */}
                 <BgCard
                   bg={bgKayu}
+                  imgOpacity={0.4}
                   className="aspect-[4/5] shadow-elegant-lg"
-                  overlayClassName="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10"
+                  overlayClassName="absolute inset-0 bg-gradient-to-br from-black/25 to-black/10"
                 >
                   <div className="h-full w-full flex items-center justify-center">
                     <span className="text-4xl">🪵</span>
