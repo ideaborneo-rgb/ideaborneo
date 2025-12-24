@@ -20,25 +20,25 @@ const projects = [
     title: "Pendopo & Fasilitas Publik",
     category: "Fasilitas Umum",
     description: "Desain dan konstruksi pendopo untuk keperluan publik.",
-    image: "src/assets/pendopo.jpg"
+    image: "src/assets/pendopo.jpg",
   },
   {
     title: "Eco Resort Villa",
     category: "Hospitality",
     description: "Villa resort ramah lingkungan dengan material kayu berkelanjutan.",
-    image: "src/asstes/villa.jpg"
+    image: "src/asstes/villa.jpg",
   },
   {
     title: "Cafe & Restaurant",
     category: "Komersial",
     description: "Interior dan eksterior kayu untuk cafe dan restoran premium.",
-    image: "src/assets/cafe.jpg"
+    image: "src/assets/cafe.jpg",
   },
   {
     title: "Private Residence",
     category: "Residensial",
     description: "Rumah tinggal custom dengan desain arsitektur eksklusif.",
-    image: "src/assets/private.jpg"
+    image: "src/assets/private.jpg",
   },
 ];
 
