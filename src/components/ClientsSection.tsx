@@ -52,25 +52,23 @@ export const ClientsSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center"
+          className="mx-auto max-w-5xl"
         >
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-10 items-center justify-items-center">
           {clientLogos.map((src, i) => (
-            <motion.div
+            <motion.img
               key={src}
-              initial={{ opacity: 0, scale: 0.95 }}
+              src={src}
+              alt={`Client Logo ${i + 1}`}
+              loading="lazy"
+              initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35, delay: i * 0.04 }}
+              transition={{ duration: 0.35, delay: i * 0.03 }}
               viewport={{ once: true }}
-              className="group bg-card/70 backdrop-blur rounded-xl border border-border/60 px-5 py-4 flex items-center justify-center hover:shadow-md transition-all"
-            >
-              <img
-                src={src}
-                alt={`Client Logo ${i + 1}`}
-                loading="lazy"
-                className="h-10 md:h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
-              />
-            </motion.div>
+              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+            />
           ))}
+          </div>
         </motion.div>
       </div>
     </section>
