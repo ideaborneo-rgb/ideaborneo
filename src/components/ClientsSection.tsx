@@ -24,6 +24,11 @@ const clientLogos = [
 ];
 
 export const ClientsSection = () => {
+  const perRow = 6;
+  const mainCount = Math.floor(clientLogos.length / perRow) * perRow;
+  const mainLogos = clientLogos.slice(0, mainCount);
+  const restLogos = clientLogos.slice(mainCount);
+
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4">
@@ -46,30 +51,50 @@ export const ClientsSection = () => {
           </p>
         </motion.div>
 
-        {/* LOGO GRID */}
+        {/* GRID UTAMA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-5xl flex justify-center"
+          className="mx-auto max-w-5xl"
         >
           <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-12 place-items-center">
-          {clientLogos.map((src, i) => (
-            <motion.img
-              key={src}
-              src={src}
-              alt={`Client Logo ${i + 1}`}
-              loading={i < 6 ? "eager" : "lazy"}
-              decoding="async"
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35, delay: i * 0.03 }}
-              viewport={{ once: true }}
-              className="h-12 sm:h-14 md:h-16 w-auto object-contain"
-            />
-          ))}
+            {mainLogos.map((src, i) => (
+              <motion.img
+                key={src}
+                src={src}
+                alt={`Client Logo ${i + 1}`}
+                loading={i < 6 ? "eager" : "lazy"}
+                decoding="async"
+                initial={{ opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.35, delay: i * 0.03 }}
+                viewport={{ once: true }}
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+              />
+            ))}
           </div>
+
+          {/* SISA LOGO AUTO CENTER */}
+          {restLogos.length > 0 && (
+            <div className="flex justify-center gap-x-12 gap-y-12 mt-12 flex-wrap">
+              {restLogos.map((src, i) => (
+                <motion.img
+                  key={src}
+                  src={src}
+                  alt={`Client Logo ${mainCount + i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.35, delay: i * 0.03 }}
+                  viewport={{ once: true }}
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain"
+                />
+              ))}
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
