@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
 
 const clientLogos = [
-  "/clients/logo-01.png",
-  "/clients/logo-02.png",
-  "/clients/logo-03.png",
-  "/clients/logo-04.png",
-  "/clients/logo-05.png",
-  "/clients/logo-06.png",
-  "/clients/logo-07.png",
-  "/clients/logo-08.png",
-  "/clients/logo-09.png",
-  "/clients/logo-10.png",
-  "/clients/logo-11.png",
-  "/clients/logo-12.png",
-  "/clients/logo-13.png",
-  "/clients/logo-14.png",
-  "/clients/logo-15.png",
-  "/clients/logo-16.png",
-  "/clients/logo-17.png",
-  "/clients/logo-18.png",
-  "/clients/logo-19.png",
-  "/clients/logo-20.png",
+  "/client1/logo-01.png",
+  "/client1/logo-02.png",
+  "/client1/logo-03.png",
+  "/client1/logo-04.png",
+  "/client1/logo-05.png",
+  "/client1/logo-06.png",
+  "/client1/logo-07.png",
+  "/client1/logo-08.png",
+  "/client1/logo-09.png",
+  "/client1/logo-10.png",
+  "/client1/logo-11.png",
+  "/client1/logo-12.png",
+  "/client1/logo-13.png",
+  "/client1/logo-14.png",
+  "/client1/logo-15.png",
+  "/client1/logo-16.png",
+  "/client1/logo-17.png",
+  "/client1/logo-18.png",
+  "/client1/logo-19.png",
+  "/client1/logo-20.png",
 ];
 
 export const ClientsSection = () => {
@@ -52,15 +52,16 @@ export const ClientsSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-5xl"
+          className="mx-auto max-w-5xl flex justify-center"
         >
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-10 gap-y-10 items-center justify-items-center">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-12 place-items-center">
           {clientLogos.map((src, i) => (
             <motion.img
               key={src}
               src={src}
               alt={`Client Logo ${i + 1}`}
-              loading="lazy"
+              loading={i < 6 ? "eager" : "lazy"}
+              decoding="async"
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.35, delay: i * 0.03 }}
