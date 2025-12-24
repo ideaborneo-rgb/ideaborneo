@@ -164,8 +164,8 @@ export const AboutSection = () => {
                   className="aspect-[4/5] shadow-elegant-lg"
                   overlayClassName="absolute inset-0 bg-gradient-to-br from-black/25 to-black/10"
                 >
-                  <span className="text-4xl font-heading font-bold text-white">
-                    <span className="text-4xl">ReForestrasi</span>
+                  <div className="h-full w-full flex items-center justify-center">
+                    <span className="text-4xl font-heading font-bold text-white">ReForestrasi</span>
                   </div>
                 </BgCard>
               </div>
