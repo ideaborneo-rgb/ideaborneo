@@ -20,7 +20,7 @@ const projects = [
     title: "Pendopo & Fasilitas Publik",
     category: "Fasilitas Umum",
     description: "Desain dan konstruksi pendopo untuk keperluan publik.",
-    image: "src/assets/pendopo.jpg
+    image: "src/assets/pendopo.jpg"
   },
   {
     title: "Eco Resort Villa",
