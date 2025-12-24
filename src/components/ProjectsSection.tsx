@@ -7,32 +7,38 @@ const projects = [
     category: "Proyek IKN",
     description: "Rumah kayu yang diresmikan oleh Presiden RI ke-7 di Ibu Kota Nusantara.",
     featured: true,
+    image: "src/assets/wanagama.jpg",
   },
   {
     title: "Rumah Kayu IKN - MHHT",
     category: "Proyek IKN",
     description: "Proyek rumah kayu prestisius di kawasan IKN.",
     featured: true,
+    image: "src/assets/glamping.jpg",
   },
   {
     title: "Pendopo & Fasilitas Publik",
     category: "Fasilitas Umum",
     description: "Desain dan konstruksi pendopo untuk keperluan publik.",
+    image: "src/assets/pendopo.jpg
   },
   {
     title: "Eco Resort Villa",
     category: "Hospitality",
     description: "Villa resort ramah lingkungan dengan material kayu berkelanjutan.",
+    image: "src/asstes/villa.jpg"
   },
   {
     title: "Cafe & Restaurant",
     category: "Komersial",
     description: "Interior dan eksterior kayu untuk cafe dan restoran premium.",
+    image: "src/assets/cafe.jpg"
   },
   {
     title: "Private Residence",
     category: "Residensial",
     description: "Rumah tinggal custom dengan desain arsitektur eksklusif.",
+    image: "src/assets/private.jpg"
   },
 ];
 
@@ -47,7 +53,7 @@ export const ProjectsSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <span className="text-primary font-medium text-sm uppercase tracking-wider mb-4 block">
+          <span className="text-black font-medium text-sm uppercase tracking-wider mb-4 block">
             Portofolio
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
@@ -72,17 +78,19 @@ export const ProjectsSection = () => {
               }`}
             >
               {/* Image Placeholder */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-wood-light via-secondary to-wood-medium relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-5xl opacity-50">🏠</span>
+              <div 
+                className="aspect-[4/3] relative overflow-hidden bg-cover bg-center"
+                style={{ backgroundImage: `url(${project.image})` }}
+              >
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/60 transition-all duration-300" />
                 </div>
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <ArrowUpRight className="w-10 h-10 text-primary-foreground" />
+                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <ArrowUpRight className="w-10 h-10 text-white" />
                 </div>
                 {/* Featured badge */}
                 {project.featured && (
-                  <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium">
+                  <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-medium z-10">
                     Diresmikan Presiden
                   </div>
                 )}
