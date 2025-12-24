@@ -1,22 +1,26 @@
 import { motion } from "framer-motion";
 
-const clientCategories = [
-  {
-    category: "Pemerintah",
-    clients: ["Pemerintah Provinsi", "Pemerintah Kabupaten", "Kementerian"],
-  },
-  {
-    category: "BUMN",
-    clients: ["Perusahaan Negara", "Lembaga Pemerintah"],
-  },
-  {
-    category: "Universitas",
-    clients: ["Perguruan Tinggi", "Lembaga Pendidikan"],
-  },
-  {
-    category: "Swasta",
-    clients: ["Korporasi", "Developer", "Kontraktor"],
-  },
+const clientLogos = [
+  "/clients/logo-01.png",
+  "/clients/logo-02.png",
+  "/clients/logo-03.png",
+  "/clients/logo-04.png",
+  "/clients/logo-05.png",
+  "/clients/logo-06.png",
+  "/clients/logo-07.png",
+  "/clients/logo-08.png",
+  "/clients/logo-09.png",
+  "/clients/logo-10.png",
+  "/clients/logo-11.png",
+  "/clients/logo-12.png",
+  "/clients/logo-13.png",
+  "/clients/logo-14.png",
+  "/clients/logo-15.png",
+  "/clients/logo-16.png",
+  "/clients/logo-17.png",
+  "/clients/logo-18.png",
+  "/clients/logo-19.png",
+  "/clients/logo-20.png",
 ];
 
 export const ClientsSection = () => {
@@ -28,7 +32,7 @@ export const ClientsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-14"
         >
           <span className="text-primary font-medium text-sm uppercase tracking-wider mb-4 block">
             Klien & Partner
@@ -37,55 +41,35 @@ export const ClientsSection = () => {
             Dipercaya oleh Berbagai Institusi
           </h2>
           <p className="text-lg text-muted-foreground">
-            Kami bangga telah bekerja sama dengan berbagai lembaga pemerintah, 
-            BUMN, universitas, dan perusahaan swasta terkemuka.
+            Berbagai instansi pemerintah, BUMN, universitas, hingga korporasi swasta
+            telah mempercayakan proyek mereka kepada kami.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {clientCategories.map((category, index) => (
-            <motion.div
-              key={category.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-secondary/50 rounded-2xl p-6 text-center"
-            >
-              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-heading font-bold text-primary">
-                  {category.category.charAt(0)}
-                </span>
-              </div>
-              <h3 className="font-heading font-semibold text-foreground mb-3">
-                {category.category}
-              </h3>
-              <ul className="space-y-2">
-                {category.clients.map((client) => (
-                  <li key={client} className="text-sm text-muted-foreground">
-                    {client}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Logos placeholder */}
+        {/* LOGO GRID */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-16 flex flex-wrap justify-center items-center gap-8 md:gap-12"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center"
         >
-          {[...Array(6)].map((_, i) => (
-            <div
-              key={i}
-              className="w-24 h-12 bg-muted rounded-lg flex items-center justify-center"
+          {clientLogos.map((src, i) => (
+            <motion.div
+              key={src}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.35, delay: i * 0.04 }}
+              viewport={{ once: true }}
+              className="group bg-card/70 backdrop-blur rounded-xl border border-border/60 px-5 py-4 flex items-center justify-center hover:shadow-md transition-all"
             >
-              <span className="text-muted-foreground text-xs font-medium">Logo {i + 1}</span>
-            </div>
+              <img
+                src={src}
+                alt={`Client Logo ${i + 1}`}
+                loading="lazy"
+                className="h-10 md:h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+              />
+            </motion.div>
           ))}
         </motion.div>
       </div>
