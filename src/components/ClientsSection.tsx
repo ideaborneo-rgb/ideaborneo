@@ -1,26 +1,31 @@
 import { motion } from "framer-motion";
 
+import logo01 from "@/assets/client1/logo-01.png";
+import logo02 from "@/assets/client1/logo-02.png";
+import logo03 from "@/assets/client1/logo-03.png";
+import logo04 from "@/assets/client1/logo-04.png";
+import logo05 from "@/assets/client1/logo-05.png";
+import logo06 from "@/assets/client1/logo-06.png";
+import logo07 from "@/assets/client1/logo-07.png";
+import logo08 from "@/assets/client1/logo-08.png";
+import logo09 from "@/assets/client1/logo-09.png";
+import logo10 from "@/assets/client1/logo-10.png";
+import logo11 from "@/assets/client1/logo-11.png";
+import logo12 from "@/assets/client1/logo-12.png";
+import logo13 from "@/assets/client1/logo-13.png";
+import logo14 from "@/assets/client1/logo-14.png";
+import logo15 from "@/assets/client1/logo-15.png";
+import logo16 from "@/assets/client1/logo-16.png";
+import logo17 from "@/assets/client1/logo-17.png";
+import logo18 from "@/assets/client1/logo-18.png";
+import logo19 from "@/assets/client1/logo-19.png";
+import logo20 from "@/assets/client1/logo-20.png";
+
 const clientLogos = [
-  "/client1/logo-01.png",
-  "/client1/logo-02.png",
-  "/client1/logo-03.png",
-  "/client1/logo-04.png",
-  "/client1/logo-05.png",
-  "/client1/logo-06.png",
-  "/client1/logo-07.png",
-  "/client1/logo-08.png",
-  "/client1/logo-09.png",
-  "/client1/logo-10.png",
-  "/client1/logo-11.png",
-  "/client1/logo-12.png",
-  "/client1/logo-13.png",
-  "/client1/logo-14.png",
-  "/client1/logo-15.png",
-  "/client1/logo-16.png",
-  "/client1/logo-17.png",
-  "/client1/logo-18.png",
-  "/client1/logo-19.png",
-  "/client1/logo-20.png",
+  logo01, logo02, logo03, logo04, logo05,
+  logo06, logo07, logo08, logo09, logo10,
+  logo11, logo12, logo13, logo14, logo15,
+  logo16, logo17, logo18, logo19, logo20,
 ];
 
 export const ClientsSection = () => {
@@ -51,7 +56,6 @@ export const ClientsSection = () => {
           </p>
         </motion.div>
 
-        {/* GRID UTAMA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -76,7 +80,6 @@ export const ClientsSection = () => {
             ))}
           </div>
 
-          {/* SISA LOGO AUTO CENTER */}
           {restLogos.length > 0 && (
             <div className="flex justify-center gap-x-12 gap-y-12 mt-12 flex-wrap">
               {restLogos.map((src, i) => (
