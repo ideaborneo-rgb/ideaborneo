@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Factory, Clock, Target, Building2 } from "lucide-react";
-import prefabBg from "@/assets/prefab-system.jpg";
+import prefabBg from "@/assets/prefab-system.webp";
 
 const benefits = [
   {
