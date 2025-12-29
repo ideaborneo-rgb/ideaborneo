@@ -1,44 +1,52 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import wanagamaImg from "@/assets/projects/wanagama.jpg";
+import glampingImg from "@/assets/projects/glamping.jpg";
+import pendopoImg from "@/assets/projects/pendopo.jpg";
+import villaImg from "@/assets/projects/villa.jpg";
+import cafeImg from "@/assets/projects/cafe.jpg";
+import privateImg from "@/assets/projects/private.jpg";
+
 
 const projects = [
   {
     title: "Rumah Kayu IKN - Wanagama",
     category: "Proyek IKN",
-    description: "Rumah kayu yang diresmikan oleh Presiden RI ke-7 di Ibu Kota Nusantara.",
+    description:
+      "Rumah kayu yang diresmikan oleh Presiden RI ke-7 di Ibu Kota Nusantara.",
     featured: true,
-    image: "src/assets/wanagama.jpg",
+    image: wanagamaImg,
   },
   {
     title: "Rumah Kayu IKN - MHHT",
     category: "Proyek IKN",
     description: "Proyek rumah kayu prestisius di kawasan IKN.",
     featured: true,
-    image: "src/assets/glamping.jpg",
+    image: glampingImg,
   },
   {
     title: "Pendopo & Fasilitas Publik",
     category: "Fasilitas Umum",
     description: "Desain dan konstruksi pendopo untuk keperluan publik.",
-    image: "src/assets/pendopo.jpg",
+    image: pendopoImg,
   },
   {
     title: "Eco Resort Villa",
     category: "Hospitality",
     description: "Villa resort ramah lingkungan dengan material kayu berkelanjutan.",
-    image: "src/assets/villa.jpg",
+    image: villaImg,
   },
   {
     title: "Cafe & Restaurant",
     category: "Komersial",
     description: "Interior dan eksterior kayu untuk cafe dan restoran premium.",
-    image: "src/assets/cafe.jpg",
+    image: cafeImg,
   },
   {
     title: "Private Residence",
     category: "Residensial",
     description: "Rumah tinggal custom dengan desain arsitektur eksklusif.",
-    image: "src/assets/private.jpg",
+    image: privateImg,
   },
 ];
 
