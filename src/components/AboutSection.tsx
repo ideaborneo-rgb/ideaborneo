@@ -5,7 +5,7 @@ import { CheckCircle2 } from "lucide-react";
 import bgRumah from "@/assets/rumah.webp";
 import bg7Tahun from "@/assets/7+tahun.webp";
 import bgProyek from "@/assets/proyek-selesai.webp";
-import bgKayu from "@/assets/kayu.webp";
+import bgKayu from "@/assets/kayu.jpg";
 
 const features = [
   "Filosofi craftsmanship tradisional dengan teknologi modern",
