@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import wanagamaImg from "@/assets/projects/wanagama.jpg";
-import glampingImg from "@/assets/projects/glamping.jpg";
-import pendopoImg from "@/assets/projects/pendopo.jpg";
-import villaImg from "@/assets/projects/villa.jpg";
-import cafeImg from "@/assets/projects/cafe.jpg";
-import privateImg from "@/assets/projects/private.jpg";
+import wanagamaImg from "@/assets/projects/wanagama.webp";
+import glampingImg from "@/assets/projects/glamping.webp";
+import pendopoImg from "@/assets/projects/pendopo.webp";
+import villaImg from "@/assets/projects/villa.webp";
+import cafeImg from "@/assets/projects/cafe.webp";
+import privateImg from "@/assets/projects/private.webp";
 
 
 const projects = [
