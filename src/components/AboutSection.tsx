@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 // ganti sesuai file kamu
-import bgRumah from "@/assets/rumah.jpg";
-import bg7Tahun from "@/assets/7+tahun.jpg";
-import bgProyek from "@/assets/proyek-selesai.jpg";
-import bgKayu from "@/assets/kayu.jpg";
+import bgRumah from "@/assets/rumah.webp";
+import bg7Tahun from "@/assets/7+tahun.webp";
+import bgProyek from "@/assets/proyek-selesai.webp";
+import bgKayu from "@/assets/kayu.webp";
 
 const features = [
   "Filosofi craftsmanship tradisional dengan teknologi modern",
