@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
-  base: "/ideaborneo/",
+  base: "/ideaborneo.com/",
   plugins: [react()],
   resolve: {
     alias: {
