@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ideaborneo.com/sitemap.xml
